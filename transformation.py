@@ -1,3 +1,5 @@
+# First way
+
 x = "灩捯䍔䙻ㄶ形楴獟楮獴㌴摟潦弸弰摤捤㤷慽"
 z = []
 u = []
@@ -22,6 +24,21 @@ try:
        
        
 finally:
+    print("First way")
     result = ''.join(str(item) for item in u)
     print(result)
     print("Done!")
+    
+
+# Second way
+asci_i = []
+
+for i in x:
+    asci_i.append(hex(ord(i)).lstrip("0x"))
+    
+
+
+#print(asci_i)
+print("Second way")
+for n in asci_i:
+    print(bytearray.fromhex(n).decode(), end="")
